@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import useFetch from "../hooks/useFetch";
-import { nextHandler, prevHandler } from "../helpers/index";
+import useFetchHeroes from "../hooks/useFetchHeroes";
+import { nextHandler, prevHandler } from "../helpers/btnPrevNext";
 
 const HeroCard = () => {
   const [page, setPage] = useState(1);
-  const { data, loading } = useFetch(`character/?page=${page}`);
+  const { data, loading } = useFetchHeroes(`character/?page=${page}`);
 
   return (
     <div className={'wrap'}>

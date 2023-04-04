@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import useFetch from "../hooks/useFetch";
-import {nextHandler, prevHandler} from '../helpers/index'
+import useFetchEpisodes from "../hooks/useFetchEpisodes";
+import {nextHandler, prevHandler} from '../helpers/btnPrevNext'
 
 const HeroEpisod = () => {
   const [page, setPage] = useState(1);
-  const { data, loading } = useFetch(`episode/?page=${page}`);
+  const { data, loading } = useFetchEpisodes(`episode/?page=${page}`);
 
   return (
     <div className={"episodes-wrapper"}>
